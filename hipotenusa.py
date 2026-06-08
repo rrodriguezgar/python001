@@ -15,7 +15,7 @@ print("Cateto 1 =", cateto1)
 print("Cateto 2 =", cateto2)
 print("Hipotenusa =", hipotenusa)
 
-#print("La hipotenusa de los catetos {cateto1} y {cateto2} es {hipotenusa}")
+print(f"La hipotenusa de los catetos {cateto1} y {cateto2} es {hipotenusa}")
 
 print(id(cateto1))
 print(type(cateto1))
