@@ -1,2 +1,3 @@
 nombre = "Juan"
-print("Hola", nombre)
+print("Hola desde Jupyter", nombre)
+
