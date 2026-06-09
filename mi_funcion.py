@@ -1,13 +1,13 @@
-def preguntar_nombre():
+""" def preguntar_nombre():
     nombre:str=input("¿Cual es tu nombre?")
     print ("Hola", nombre)
     return
 
 
-#print(preguntar_nombre())
+print(preguntar_nombre()) """
 
 
-def calcular_media(*args):
+""" def calcular_media(*args):
     total=0
     for i in args:
         total+=i
@@ -16,7 +16,7 @@ def calcular_media(*args):
 
 a,b,c,d=5,10,15,20
 media=calcular_media(a,b,c,d)
-print(media)
+print(media) """
 
 def test_kwargs(**kwargs):
     for clave, valor in kwargs.items():
