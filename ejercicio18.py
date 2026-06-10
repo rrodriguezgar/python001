@@ -2,6 +2,7 @@ import pandas as pd
 import shutil
 import os
 from pathlib import Path
+import openpyxl as xl
 
 #wget.download('https://www.ine.es/jaxiT3/files/t/es/csv_bdsc/36680.csv')
 
@@ -31,9 +32,14 @@ if not fichero_path.exists():
 shutil.move(src=poblacion_csv_copia, dst=fichero_path.joinpath(poblacion_csv_copia))
 
 #3.- Escribir en un nuevo fichero las primeras 100 líneas del fichero .tsv
-
+fichero100_lineas= "36680_100_lineas.tsv"
+with open(poblacion_tsv, "r", encoding="UTF-8") as read_tsv:
+    lineas=read_tsv.readlines(100) #lee 100 caracteres, no líneas
+    with open(fichero100_lineas, "w", encoding="UTF-8") as write_tsv:
+        write_tsv.writelines(lineas)
+        
 #4.- Convertir el fichero con formato .csv a .xlsx
 leer_fichero_toexcel = pd.read_csv(r"36680.csv",sep=";", encoding="UTF-8")
 escribir_excel = "36680.xlsx"
 
-leer_fichero_toexcel.to_excel(r"36680.xlsx", index=False, header=True)
+leer_fichero_toexcel.to_excel(r"36680.xlsx", index=False,sheet_name="Hoja1", header=True)
