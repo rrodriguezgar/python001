@@ -32,7 +32,6 @@ if not fichero_path.exists():
 
 fichero_path= fichero_path.joinpath("miquijote.txt")
 
-with
 
 entrada= """ En un lugar de la Mancha, de cuyo nombre no quiero
 acordarme, no ha mucho tiempo que vivía un hidalgo de los de lanza en
@@ -41,6 +40,11 @@ algo más vaca que carnero,
 """
 
 #Añadir texto a un fichero existente
-with open("miquijote.txt", "a") as fichero:
+with open(fichero_path, "a") as fichero:
     fichero.write(entrada)
 
+
+fichero_ruta=Path("dir1", "hola.py")
+with fichero_ruta.open("r") as fichero:
+    print(fichero.read())
+  
